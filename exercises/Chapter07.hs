@@ -8,11 +8,11 @@ g' :: (a -> Bool) -> (a -> b) -> [a] -> [b]
 g' p f = map f . filter p
 
 -- Exercise 2
-all :: (a -> Bool) -> [a] -> Bool
-all p = and . map p
+all' :: (a -> Bool) -> [a] -> Bool
+all' p = and . map p
 
-any :: (a -> Bool) -> [a] -> Bool
-any p = or . map p
+any' :: (a -> Bool) -> [a] -> Bool
+any' p = or . map p
 
 takeWhile' :: (a -> Bool) -> [a] -> [a]
 takeWhile' _ [] = []
