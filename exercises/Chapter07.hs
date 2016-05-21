@@ -25,3 +25,14 @@ dropWhile' _ [] = []
 dropWhile' p (x:xs)
   | p x       = dropWhile' p xs
   | otherwise = x : xs
+
+-- Exercise 3
+map' :: (a -> b) -> [a] -> [b]
+map' f = foldr (\x acc -> f x : acc) []
+
+filter' :: (a -> Bool) -> [a] -> [a]
+filter' p = foldr (\x acc -> if p x then x : acc else acc) []
+
+-- Exercise 4
+dec2int :: [Int] -> Int
+dec2int = foldl (\acc x -> acc * 10 + x) 0
