@@ -36,3 +36,10 @@ filter' p = foldr (\x acc -> if p x then x : acc else acc) []
 -- Exercise 4
 dec2int :: [Int] -> Int
 dec2int = foldl (\acc x -> acc * 10 + x) 0
+
+-- Exercise 6
+curry' :: ((a, b) -> c) -> a -> b -> c
+curry' f = \x y -> f (x, y)
+
+uncurry' :: (a -> b -> c) -> (a, b) -> c
+uncurry' f = \(x, y) -> f x y
