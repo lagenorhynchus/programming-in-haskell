@@ -39,7 +39,7 @@ dec2int = foldl (\acc x -> acc * 10 + x) 0
 
 -- Exercise 6
 curry' :: ((a, b) -> c) -> a -> b -> c
-curry' f = \x y -> f (x, y)
+curry' f x y = f (x, y)
 
 uncurry' :: (a -> b -> c) -> (a, b) -> c
-uncurry' f = \(x, y) -> f x y
+uncurry' f (x, y) = f x y
