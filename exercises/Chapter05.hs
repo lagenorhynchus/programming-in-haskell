@@ -43,14 +43,14 @@ scalarproduct xs ys = sum [x * y | (x, y) <- zip xs ys]
 -- Exercise 8
 shift :: Int -> Char -> Char
 shift n c
-  | isLower c = int2lower ((lower2int c + n) `mod` 26)
-  | isUpper c = int2upper ((upper2int c + n) `mod` 26)
+  | isLower c = int2lower $ (lower2int c + n) `mod` 26
+  | isUpper c = int2upper $ (upper2int c + n) `mod` 26
   | otherwise = c
   where
     lower2int c' = ord c' - ord 'a'
-    int2lower n' = chr (ord 'a' + n')
+    int2lower n' = chr $ ord 'a' + n'
     upper2int c' = ord c' - ord 'A'
-    int2upper n' = chr (ord 'A' + n')
+    int2upper n' = chr $ ord 'A' + n'
 
 encode :: Int -> String -> String
 encode n cs = [shift n c | c <- cs]
