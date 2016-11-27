@@ -1,4 +1,6 @@
-module Chapter07 where
+module Exercises.Chapter07 where
+
+-- Higher-order functions
 
 -- Exercise 1
 g :: (a -> Bool) -> (a -> b) -> [a] -> [b]
@@ -17,14 +19,14 @@ any' p = or . map p
 takeWhile' :: (a -> Bool) -> [a] -> [a]
 takeWhile' _ [] = []
 takeWhile' p (x:xs)
-  | p x       = x : takeWhile' p xs
-  | otherwise = []
+    | p x       = x : takeWhile' p xs
+    | otherwise = []
 
 dropWhile' :: (a -> Bool) -> [a] -> [a]
 dropWhile' _ [] = []
 dropWhile' p (x:xs)
-  | p x       = dropWhile' p xs
-  | otherwise = x : xs
+    | p x       = dropWhile' p xs
+    | otherwise = x : xs
 
 -- Exercise 3
 map' :: (a -> b) -> [a] -> [b]
@@ -43,3 +45,9 @@ curry' f x y = f (x, y)
 
 uncurry' :: (a -> b -> c) -> (a, b) -> c
 uncurry' f (x, y) = f x y
+
+-- Exercise 7
+-- TODO
+
+-- Exercise 8
+-- TODO

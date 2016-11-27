@@ -1,4 +1,15 @@
-module Chapter02 where
+module Exercises.Chapter02 where
+
+-- First steps
+
+-- Exercise 1
+{-
+(2 ^ 3) * 4
+
+(2 * 3) + (4 * 5)
+
+2 + (3 * (4 ^ 5))
+-}
 
 -- Exercise 3
 n :: Int

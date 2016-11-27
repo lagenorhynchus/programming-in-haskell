@@ -1,4 +1,6 @@
-module Chapter05 where
+module Exercises.Chapter05 where
+
+-- List comprehensions
 
 import Data.Char
 
@@ -12,12 +14,16 @@ replicate' n x = [x | _ <- [1..n]]
 
 -- Exercise 3
 pyths :: Int -> [(Int, Int, Int)]
-pyths n = [(x, y, z) | x <- [1..n], y <- [1..n], z <- [1..n],
-            x ^ 2 + y ^ 2 == z ^ 2]
+pyths n = [(x, y, z) | x <- [1..n]
+                     , y <- [1..n]
+                     , z <- [1..n]
+                     , x ^ 2 + y ^ 2 == z ^ 2]
 
 pyths' :: Int -> [(Int, Int, Int)]
-pyths' n = [(x, y, z) | x <- [1..n], y <- [x..n], z <- [y..n],
-            x ^ 2 + y ^ 2 == z ^ 2]
+pyths' n = [(x, y, z) | x <- [1..n]
+                      , y <- [x..n]
+                      , z <- [y..n]
+                      , x ^ 2 + y ^ 2 == z ^ 2]
 
 -- Exercise 4
 perfects :: Int -> [Int]
@@ -43,9 +49,9 @@ scalarproduct xs ys = sum [x * y | (x, y) <- zip xs ys]
 -- Exercise 8
 shift :: Int -> Char -> Char
 shift n c
-  | isLower c = int2lower $ (lower2int c + n) `mod` 26
-  | isUpper c = int2upper $ (upper2int c + n) `mod` 26
-  | otherwise = c
+    | isLower c = int2lower $ (lower2int c + n) `mod` 26
+    | isUpper c = int2upper $ (upper2int c + n) `mod` 26
+    | otherwise = c
   where
     lower2int c' = ord c' - ord 'a'
     int2lower n' = chr $ ord 'a' + n'

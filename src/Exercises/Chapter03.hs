@@ -1,4 +1,6 @@
-module Chapter03 where
+module Exercises.Chapter03 where
+
+-- Types and classes
 
 -- Exercise 1
 chars :: [Char]

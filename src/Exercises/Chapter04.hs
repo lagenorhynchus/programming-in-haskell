@@ -1,4 +1,6 @@
-module Chapter04 where
+module Exercises.Chapter04 where
+
+-- Defining functions
 
 -- Exercise 1
 halve :: [a] -> ([a], [a])
@@ -15,12 +17,12 @@ safetail xs = if null xs then [] else tail xs
 
 safetail' :: [a] -> [a]
 safetail' xs
-  | null xs   = []
-  | otherwise = tail xs
+    | null xs   = []
+    | otherwise = tail xs
 
 safetail'' :: [a] -> [a]
-safetail'' [] = []
-safetail'' xs = tail xs
+safetail'' []     = []
+safetail'' (_:xs) = xs
 
 -- Exercise 3
 (||.) :: Bool -> Bool -> Bool
@@ -39,14 +41,14 @@ _     ||... _ = True
 
 (||....) :: Bool -> Bool -> Bool
 b ||.... c
-  | b == c    = b
-  | otherwise = True
+    | b == c    = b
+    | otherwise = True
 
 -- Exercise 4
 (&&.) :: Bool -> Bool -> Bool
-a &&. b  =
-  if a then if b then True else False
-  else False
+a &&. b  = if a
+    then if b then True else False
+    else False
 
 -- Exercise 5
 (&&..) :: Bool -> Bool -> Bool
