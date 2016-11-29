@@ -97,7 +97,6 @@ encodeWithParity = concatMap $ addParity . make8 . int2bin . ord
 decodeWithParity :: [Bit] -> String
 decodeWithParity = map (chr . bin2int . checkParity) . chop9
 
-
 -- Exercise 9
 errorChannel :: [Bit] -> [Bit]
 errorChannel = tail
